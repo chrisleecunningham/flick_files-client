@@ -17,4 +17,4 @@ const container = document.querySelector("#root");
 const root = createRoot(container);
 
 // Tells React to render your app in the Root DOM element
-root.render(<flickFilesAppplication/>);
+root.render(<flickFilesApplication/>);
