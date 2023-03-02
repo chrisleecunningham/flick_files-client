@@ -2929,7 +2929,7 @@ var _client = require("react-dom/client");
 // Import statement to indicate that you need to bundle './index.scss'
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all others)
-const flickFilesApplication = ()=>{
+const FlickFilesApplication = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flick-files",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -2945,18 +2945,18 @@ const flickFilesApplication = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_c = flickFilesApplication;
+_c = FlickFilesApplication;
 // Finds the root of your app
 const container = document.querySelector("#root");
 const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the Root DOM element
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("flickFilesApplication", {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(FlickFilesApplication, {}, void 0, false, {
     fileName: "src/index.jsx",
     lineNumber: 20,
     columnNumber: 13
 }, undefined));
 var _c;
-$RefreshReg$(_c, "flickFilesApplication");
+$RefreshReg$(_c, "FlickFilesApplication");
 
   $parcel$ReactRefreshHelpers$98a3.postlude(module);
 } finally {
