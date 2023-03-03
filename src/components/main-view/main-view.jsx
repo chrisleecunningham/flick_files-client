@@ -1,17 +1,34 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { LoginView } from "../login-view/login-view";
 
 export const MainView = () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedToken = localStorage.getItem("token");
+  const [user, setUser] = useState(storedUser? storedUser : null);
+  const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies] = useState([]);
-
   const [selectedMovie, setSelectedMovie] = useState(null);
+  
 
   useEffect(() => {
-    fetch("https://flick-files-api.cyclic.app/movies/")
-      
-    .then((response) => response.json())
+    if (!token) return;
+
+    fetch("https://flick-files-api.cyclic.app/movies", 
+  {
+      headers: { Authorization: `Bearer ${token}` },
+    })      
+      .then((response) => response.json())
       .then((movies) => {
+        setMovies(movies);
+
+      });
+  }, [token]);
+      
+      
+      // OLD code
+      /*.then((movies) => {
         const moviesFromApi = movies.map((movie) => {
           return {
             id: movie.key,
@@ -24,7 +41,19 @@ export const MainView = () => {
 
         setMovies(movies);
       });
-  }, []);
+  }, []);*/
+
+  if (!user) {
+    return (
+      <LoginView 
+        onLoggedIn={(user, token) => {
+          setUser(user); 
+          setToken(token);
+        }}
+      />
+    );    
+  } 
+
 
   if (selectedMovie) {
     return (
@@ -47,6 +76,9 @@ export const MainView = () => {
           }} 
         />
       ))}
+
+      <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
+
     </div>
   );
 }
