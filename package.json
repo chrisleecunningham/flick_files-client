@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chrisleecunningham/flick_files-client#readme",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "eslint": "^8.35.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
