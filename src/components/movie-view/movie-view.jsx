@@ -14,7 +14,7 @@ export const MovieView = ({ movies }) => {
   const [openGenre, setOpenGenre] = useState(false);
   const [openBio, setOpenBio] = useState(false);
 
-  const movie = movies.find((m) => m.id === movieId);
+  const movie = movies.find((m) => m._id === movieId);
 
   return (
     <Row>
