@@ -1,28 +1,33 @@
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import Stack from "react-bootstrap/Stack";
 import Collapse from "react-bootstrap/Collapse";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router";
+import "./movie-view.scss";
 
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies }) => {
+  const { movieId } = useParams();
   const [openGenre, setOpenGenre] = useState(false);
   const [openBio, setOpenBio] = useState(false);
+
+  const movie = movies.find((m) => m.id === movieId);
 
   return (
     <Row>
       <Col md={6}>
-        <Image src={movie.image} />
+        <img className="w-100 h-100" src={movie.image} /> 
       </Col>
       <Col>
         <Stack gap={3}>
           <div>Title: {movie.title}</div>
           <div>"{movie.description}"</div>
           <div>
-            Genre: {movie.genre.name} <Button
-           
+            Genre: {movie.genre.name} 
+           <Button
               variant="link"
               onClick={() => setOpenGenre(!openGenre)}
             >
@@ -49,8 +54,9 @@ export const MovieView = ({ movie, onBackClick }) => {
             </Collapse>
           </div>
         </Stack>
-              
-        <Button onClick={onBackClick}>Back</Button>
+        <Link to={`/`}>      
+          <Button className="back-button">Back</Button>
+        </Link>
       </Col>
     </Row>        
   ); 
