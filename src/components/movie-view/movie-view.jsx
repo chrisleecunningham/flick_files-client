@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types */
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -14,7 +16,7 @@ export const MovieView = ({ movies }) => {
   const [openGenre, setOpenGenre] = useState(false);
   const [openBio, setOpenBio] = useState(false);
 
-  const movie = movies.find((m) => m._id === movieId);
+  const movie = movies.find((m) => m.id === movieId);
 
   return (
     <Row>
