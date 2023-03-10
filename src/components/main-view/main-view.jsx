@@ -1,8 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import { ProfileView } from "../profile-view/profile-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
@@ -42,7 +44,6 @@ export const MainView = () => {
             director: movie.director.name
           };
         });
-
         setMovies(movies);
       });
   }, []);*/
@@ -118,11 +119,25 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={3}>
+                      <Col className="mb-4" key={movie.id} md={3}>
                         <MovieCard movie={movie} />
                       </Col>
                     ))}
                   </>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/profile" />
+                ) : (
+                  <Col md={5}>
+                    <ProfileView />
+                  </Col>
                 )}
               </>
             }
@@ -168,7 +183,6 @@ export const MainView = () => {
       )}
         
       <Button variant="secondary" onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</Button>
-
     </Row>
   );
 }; */
