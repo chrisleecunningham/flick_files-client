@@ -23,9 +23,19 @@ export const MovieCard = ({ movie }) => {
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    image: PropTypes.string,
-    title: PropTypes.string,
-    genre: PropTypes.string,
-    director: PropTypes.string
-  }).isRequired
+  _id: PropTypes.string,
+  title: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
+  genre: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string
+  }),
+  director: PropTypes.shape({
+    name: PropTypes.string,
+    bio: PropTypes.string,
+    birth: PropTypes.string,
+  }),
+  featured: PropTypes.boolean,
+  })
 }; 
