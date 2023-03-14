@@ -27381,7 +27381,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"aGe3I","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gOrbA","../profile-view/profile-view":"2vVqf"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","../profile-view/profile-view":"2vVqf","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"aGe3I","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gOrbA"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34737,7 +34737,7 @@ const MovieView = ({ movies  })=>{
     const { movieId  } = (0, _reactRouter.useParams)();
     const [openGenre, setOpenGenre] = (0, _react.useState)(false);
     const [openBio, setOpenBio] = (0, _react.useState)(false);
-    const movie = movies.find((m)=>m.id === movieId);
+    const movie = movies.find((m)=>m._id === movieId);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -37012,7 +37012,9 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"aGe3I","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gOrbA"}],"bsPVM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"aGe3I","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gOrbA"}],"2vVqf":[function(require,module,exports) {
+
+},{}],"bsPVM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$abf5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39884,8 +39886,6 @@ function useResizeObserver(element) {
 }
 exports.default = useResizeObserver;
 
-},{"react":"21dqq","./useIsomorphicEffect":"e8blq","@parcel/transformer-js/src/esmodule-helpers.js":"aGe3I"}],"2vVqf":[function(require,module,exports) {
-
-},{}],"i5LP7":[function() {},{}],"lJZlQ":[function() {},{}]},["exgNO","5PtNU","d8Dch"], "d8Dch", "parcelRequire028f")
+},{"react":"21dqq","./useIsomorphicEffect":"e8blq","@parcel/transformer-js/src/esmodule-helpers.js":"aGe3I"}],"i5LP7":[function() {},{}],"lJZlQ":[function() {},{}]},["exgNO","5PtNU","d8Dch"], "d8Dch", "parcelRequire028f")
 
 //# sourceMappingURL=index.0d6fcb10.js.map
